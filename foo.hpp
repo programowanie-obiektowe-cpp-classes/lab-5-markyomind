@@ -5,8 +5,22 @@
 #include <list>
 #include <vector>
 
-std::vector< char > foo(std::list< Human >& people)
+std::vector< char > foo(std::list< Human >& ludzie)
 {
-    // Twoja implementacja tutaj
-    return {};
+    std::vector<char> wynik;
+    
+    for (auto it = ludzie.rbegin(); it != ludzie.rend(); ++it)
+    {
+        it->birthday(); 
+        if (it->isMonster())
+        {
+            wynik.push_back('n'); 
+        }
+        else
+        {
+            wynik.push_back('y'); 
+        }
+    }
+
+    return wynik;
 }
