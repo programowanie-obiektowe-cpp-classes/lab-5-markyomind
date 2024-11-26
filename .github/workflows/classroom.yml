@@ -1,6 +1,6 @@
 name: Autograding Tests
 'on':
-- workflow_dispatch
+- push
 - repository_dispatch
 permissions:
   checks: write
@@ -19,7 +19,7 @@ jobs:
       with:
         test-name: Zaliczenie
         setup-command: mkdir -p build && cd build && cmake .. && make -j 2 && chmod
-          +x ./zal
+          +x zal
         command: cd build && ./zal
         timeout: 10
         max-score: 5
